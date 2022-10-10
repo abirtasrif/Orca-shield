@@ -1,15 +1,15 @@
 :root {
-  --color-primary: #24cbc8;
-  --color-secondary: #ff768b;
-  --color-tertiary: #ff7a42;
-  --color-primary-darker: #139e9c;
-  --color-secondary-darker: #c94559;
-  --color-tertiary-darker: #d35e2c;
-  --color-primary-opacity: #24cbc856;
-  --color-secondary-opacity: #ff768b56;
-  --color-tertiary-opacity: #ff7b4256;
-  --gradient-primary: linear-gradient(to top left, #139e9c, #24cbc8);
-  --gradient-secondary: linear-gradient(to top left, #d35e2c, #ff7a42);
+  --color-primary: #aa85ff;
+  --color-secondary: #42acfd;
+  --color-tertiary: #42ff6b;
+  --color-primary-darker: #9062fd;
+  --color-secondary-darker: #1d9bfc;
+  --color-tertiary-darker: #28dd4f;
+  --color-primary-opacity: #aa85ff59;
+  --color-secondary-opacity: #42acfc59;
+  --color-tertiary-opacity: #42ff6b59;
+  --gradient-primary: linear-gradient(to top left, #aa85ff, #42acfd);
+  --gradient-secondary: linear-gradient(to top left, #28dd4f, #42acfd);
 }
 
 ::-webkit-scrollbar {
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #24cbc8;
+  background-color: #9062fd;
   height: 10%;
 }
 
@@ -41,7 +41,7 @@ body {
   font-weight: 300;
   color: #444;
   line-height: 1.9;
-  background-color: #f3f3f3;
+  background-color: #d3d3d3c5;
   overflow-x: hidden;
 }
 
@@ -453,9 +453,9 @@ h4 {
   top: 50%;
   z-index: 10;
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: hsla(0, 0%, 100%, 0.4);
   font-family: inherit;
-  color: #333;
+  color: rgb(51, 51, 51);
   border-radius: 50%;
   height: 5.5rem;
   width: 5.5rem;
