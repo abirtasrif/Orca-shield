@@ -264,6 +264,7 @@ h4 {
   grid-column: 2 / 3;
   grid-row: 1 / span 4;
   transform: translateY(-6rem);
+  filter: brightness(150%) invert(59%) sepia(40%) saturate(300%) hue-rotate(178deg) contrast(100%);
 }
 
 .highlight {
