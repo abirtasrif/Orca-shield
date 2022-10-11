@@ -136,9 +136,7 @@ const imageObserver = new IntersectionObserver(loadImage, {
 
 imgTargets.forEach(img => imageObserver.observe(img));
 
-// button handles
-btnLeft.addEventListener("click", previousSlide);
-btnRight.addEventListener("click", nextSlide);
+
 
 // Slider
 let currentSlide = 0;
@@ -147,7 +145,7 @@ const maxSlide = slides.length - 1;
 // DOts
 function creatingDots() {
   slides.forEach((_, i) => {
-    const dot = `<button class="dots__dot" data-slide="${i}"></button>`;
+    const dot = `<button class="dots_dot" data-slide="${i}"></button>`;
     dotContainer.insertAdjacentHTML("beforeend", dot);
   });
 }
@@ -157,12 +155,12 @@ creatingDots();
 // Activate dots
 function activateDots(slide) {
   document
-    .querySelectorAll(".dots__dot")
-    .forEach((dot) => dot.classList.remove("dots__dot--active"));
+    .querySelectorAll(".dots_dot")
+    .forEach((dot) => dot.classList.remove("dots_dot--active"));
 
   document
-    .querySelector(`.dots__dot[data-slide="${slide}"]`)
-    .classList.add("dots__dot--active");
+    .querySelector(`.dots_dot[data-slide="${slide}"]`)
+    .classList.add("dots_dot--active");
 }
 
 activateDots(0);
@@ -191,12 +189,15 @@ function nextSlide() {
 
 // dots handler
 dotContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("dots__dot")) {
+  if (e.target.classList.contains("dots_dot")) {
     activateDots(e.target.dataset.slide);
     updateSlide(e.target.dataset.slide);
   }
 });
 
+// button handles
+btnLeft.addEventListener("click", previousSlide);
+btnRight.addEventListener("click", nextSlide);
 
 // keyboard arrow
 document.addEventListener("keydown", (e) => {
@@ -206,17 +207,17 @@ document.addEventListener("keydown", (e) => {
   
   // tabbed components
   tabsContainer.addEventListener("click", function (e) {
-    const btn = e.target.closest(".operations__tab");
+    const btn = e.target.closest(".operations_tab");
   
     if (!btn) return;
   
-    tabs.forEach((tab) => tab.classList.remove("operations__tab--active"));
+    tabs.forEach((tab) => tab.classList.remove("operations_tab--active"));
     tabsContent.forEach((content) =>
-      content.classList.remove("operations__content--active")
+      content.classList.remove("operations_content--active")
     );
   
-    btn.classList.add("operations__tab--active");
+    btn.classList.add("operations_tab--active");
     document
-      .querySelector(`.operations__content--${btn.dataset.tab}`)
-      .classList.add("operations__content--active");
+      .querySelector(`.operations_content--${btn.dataset.tab}`)
+      .classList.add("operations_content--active");
   });
