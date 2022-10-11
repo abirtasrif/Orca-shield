@@ -257,6 +257,7 @@ h1 {
 h4 {
   font-size: 2.4rem;
   font-weight: 500;
+  margin:1.5rem 0;
 }
 
 .header_img {
@@ -673,7 +674,7 @@ h4 {
 
 .modal_form input:focus {
   outline: none;
-  border-color: #24cbc8;
+  border-color: #aa85ff;
 }
 
 .modal_form button {
@@ -776,7 +777,7 @@ h4 {
   }
 
   .nav_toggle:hover {
-    color: #24cbc8;
+    color: #aa85ff;
   }
 
   .header_title {

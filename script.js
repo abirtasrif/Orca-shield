@@ -111,4 +111,27 @@ toggleBtn.addEventListener("click",function(){
 navLinks.addEventListener("click", function(){
     navLinks.classList.contains("nav_open") &&
         navLinks.classList.remove("nav_open");
+    document.querySelector("html").style.overflow="visible";
 });
+
+btnScrollTo.addEventListener("click",function(){
+    section1.scrollIntoView({behavior:"smooth"});
+});
+
+
+// Lazy Loading
+const loadImage = function(entries, observer){
+    const entry = entries[0];
+    if (!entry.isIntersecting) return;
+    entry.target.src = entry.target.dataset.src;
+    entry.target.addEventListener("load",function(){
+        entry.target.classList.remove("lazy-img");
+    });
+};
+const imageObserver = new IntersectionObserver(loadImage, {
+    root: null,
+    threshold: 0,
+    rootMargin: "250px",
+});
+
+imgTargets.forEach(img => imageObserver.observe(img));
