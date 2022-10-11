@@ -41,7 +41,7 @@ body {
   font-weight: 300;
   color: #444;
   line-height: 1.9;
-  background-color: #d3d3d3c5;
+  background-color: #d3d3d385;
   overflow-x: hidden;
 }
 
@@ -146,7 +146,7 @@ img {
 
 .nav.sticky {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.50);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -328,7 +328,8 @@ h4 {
 .operations {
   max-width: 100rem;
   margin: 12rem auto 0 auto;
-  background-color: #fff;
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
 }
 
 .operations_tab-container {
