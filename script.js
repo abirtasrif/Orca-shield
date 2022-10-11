@@ -217,7 +217,6 @@ document.addEventListener("keydown", (e) => {
     );
   
     btn.classList.add("operations_tab--active");
-    document
-      .querySelector(`.operations_content--${btn.dataset.tab}`)
+    document.querySelector(`.operations_content--${btn.dataset.tab}`)
       .classList.add("operations_content--active");
   });
