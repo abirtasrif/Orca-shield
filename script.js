@@ -11,7 +11,6 @@ const btnCloseModal = document.querySelector(".btn--close-modal");
 const nav = document.querySelector(".nav");
 const navLinks = document.querySelector(".nav_links");
 const header = document.querySelector(".header");
-const toggleBtn = document.querySelector(".nav_toggle");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const allSections = document.querySelectorAll(".section");
 const section1 = document.querySelector("#section--1");
@@ -26,7 +25,7 @@ const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider_btn--left");
 const btnRight = document.querySelector(".slider_btn--right");
 const dotContainer = document.querySelector(".dots");
-
+const toggleBtn = document.querySelector(".nav_toggle");
 
 //Cookie
 cookieCloseBtn.addEventListener("click", function(){
@@ -43,7 +42,9 @@ function sticky(entires){
 }
 
 const headerObserver = new IntersectionObserver(sticky, {
-    root: null, threshold:0,rootMargin:`-${navHeight}px`,
+    root: null,
+    threshold:0,
+    rootMargin:`-${navHeight}px`,
 });
 
 headerObserver.observe(header);
@@ -64,4 +65,50 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 allSections.forEach((section) =>{
     sectionObserver.observe(section);
     section.classList.add("section--hidden");
+});
+
+//floating window
+function openModal(event){
+    event.preventDefault();
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+}
+
+function closeModal(){
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+}
+
+btnsOpenModal.forEach(btn=>btn.addEventListener("click",openModal));
+btnCloseModal.addEventListener("click",closeModal);
+overlay.addEventListener("click",closeModal);
+document.addEventListener("keydown", function(event){
+    if(event.key==="Escape" && !modal.classList.contains("hidden")){
+        closeModal();
+    }
+});
+
+//smooth scrolling
+navLinks.addEventListener("click",function(event){
+    event.preventDefault();
+    if(event.target.classList.contains("nav_link")){
+       const attr= event.target.getAttribute("href");
+       document.querySelector(attr).scrollIntoView({ behavior: "smooth"});
+    }
+})
+
+//navbar toggle
+toggleBtn.addEventListener("click",function(){
+    if(navLinks.classList.contains("nav_open")){
+        navLinks.classList.remove("nav_open");
+        document.querySelector('html').style.overflow="visible";
+    } else {
+        navLinks.classList.add("nav_open");
+        document.querySelector('html').style.overflow="hidden";
+    }
+});
+
+navLinks.addEventListener("click", function(){
+    navLinks.classList.contains("nav_open") &&
+        navLinks.classList.remove("nav_open");
 });
