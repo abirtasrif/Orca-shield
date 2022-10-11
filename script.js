@@ -28,3 +28,40 @@ const btnRight = document.querySelector(".slider_btn--right");
 const dotContainer = document.querySelector(".dots");
 
 
+//Cookie
+cookieCloseBtn.addEventListener("click", function(){
+    cookieBody.classList.add("hidden");
+    cookieBody.style.bottom="-12rem";
+})
+
+//navbar
+const navHeight = nav.getBoundingClientRect().height;
+function sticky(entires){
+    const entry=entires[0];
+    if(!entry.isIntersecting) nav.classList.add("sticky");
+    else nav.classList.remove("sticky");
+}
+
+const headerObserver = new IntersectionObserver(sticky, {
+    root: null, threshold:0,rootMargin:`-${navHeight}px`,
+});
+
+headerObserver.observe(header);
+
+//reveal
+function revealSection(entries, obeserver){
+    const [entry] = entries;
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove("section--hidden");
+    obeserver.unobserve(entry.target);
+}
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0,
+});
+
+allSections.forEach((section) =>{
+    sectionObserver.observe(section);
+    section.classList.add("section--hidden");
+});
