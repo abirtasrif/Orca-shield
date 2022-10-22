@@ -1,0 +1,28 @@
+{
+  "name": "orca-shield",
+  "version": "1.0.0",
+  "description": "An antivirus website created with vanilla html, css and javascript",
+  "scripts": {
+    "start":"parcel ./index.html",
+    "build":"parcel build ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abirtasrif/Orca-shield.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "vanilla",
+    "javaScript"
+  ],
+  "author": "Abir Tasrif Anto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abirtasrif/Orca-shield/issues"
+  },
+  "homepage": "https://github.com/abirtasrif/Orca-shield#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
